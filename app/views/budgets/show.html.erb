@@ -1,2 +1,45 @@
-<h1>Budgets#show</h1>
-<p>Find me in app/views/budgets/show.html.erb</p>
+<div class="page-container">
+  <h1 class="expense-title"><%= @budget.name %></h1>
+  <hr class="divider">
+
+  <div class="total-amount">
+    <h2>Total Cost</h2>
+    <%= number_to_currency(@total, unit: "R") %>
+  </div>
+
+  <hr class="divider">
+
+  <div class="add-expense-button">
+    <%= link_to 'Add an Expense', new_budget_expense_path(@budget), class: "regular-button add-expense-btn" %>
+  </div>
+
+  <hr class="divider">
+
+  <div class="expense-container">
+    <% @budget.expenses.each do |expense| %>
+      <div class="expense-card">
+        <div class="expense-name">
+          <%= expense.name %>
+        </div>
+
+        <div class="expense-details">
+          <div class="left-content">
+            <div class="expense-amount">
+              <%= number_to_currency(expense.amount, unit: "R") %>
+            </div>
+            <div class="expense-category">
+              <%= expense.category.name if expense.category.present? %>
+            </div>
+          </div>
+
+          <div class="right-content">
+            <%= link_to "Delete",
+              budget_expense_path(@budget, expense),
+              data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+              class: "delete-button" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
