@@ -1,19 +1,18 @@
 Rails.application.routes.draw do
   devise_for :users
-  
-  resources :budgets
-  resources :expenses
+
+  # Nest expenses under budgets to show their association
+  resources :budgets do
+    resources :expenses, only: [:index, :new, :create, :edit, :update, :destroy, :show]
+  end
+
   resources :expense_categories, only: [:index, :new, :create, :destroy]
   resources :reports, only: [:index, :show, :new, :create]
   resources :notifications, only: [:index, :update]
 
+  # Root path
   root 'budgets#index'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
+  # Health check route
   get "up" => "rails/health#show", as: :rails_health_check
-
-  # Defines the root path route ("/")
-  # root "posts#index"
 end
