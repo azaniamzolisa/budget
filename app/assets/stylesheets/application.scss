@@ -1,1 +1,182 @@
 @import "home";
+@import "show_budget";
+
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f0f2f5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+/* Container Styles */
+
+.page-container {
+  max-width: 800px;
+  margin: 40px 10px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* gap: 30px; */
+  height: 80vh;
+}
+
+/* Title Styles */
+
+
+/* Budget Display Styles */
+
+
+
+
+/* Budget Cards Styles */
+
+
+/* Page Container Styles */
+/* .page-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+} */
+
+/* Title Styles */
+.page-title {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Form Styles */
+.budget-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-input {
+  width: 80vw;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+/* Submit Button Styles */
+.submit-button {
+  background-color: #4a90e2;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #357abd;
+}
+
+/* Regular Button Styles */
+.regular-button {
+  display: inline-block;
+  background-color: #ddd;
+  color: #333;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.regular-button:hover {
+  background-color: #bbb;
+}
+
+/* Home Button Specific Style */
+.home-button {
+  display: block;
+  margin: 20px auto;
+  width: 120px;
+}
+
+/* Divider Styles */
+.divider {
+  width: 100%;
+  border: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+/* Total Amount Styles */
+
+
+
+
+/* Expense Container Styles */
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .page-container {
+    padding: 15px;
+  }
+
+  .budget-display {
+    width: 70vw;
+  }
+  .budget-card {
+    width: 100%;
+  }
+
+  .budget-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .new-budget-button {
+    max-width: 300px;
+  }
+}
