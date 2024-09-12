@@ -1,0 +1,111 @@
+.home-page-container {
+  max-width: 800px;
+  margin: 16px 8px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.budget-title h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.budget-display {
+  background-color: #f8f9fa;
+  border: solid 1px #e0e0e0;
+  border-radius: 10px;
+  padding: 12px 24px;
+  text-align: center;
+  width: 80%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.budget-display .name {
+  font-size: 28px;
+  color: #333;
+  font-weight: 600;
+}
+
+.budget-display .subcontent {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.budget-display .type {
+  background-color: #28a745;
+  color: #fff;
+  border-radius: 20px;
+  padding: 8px 16px;
+  text-transform: uppercase;
+}
+
+.budget-display .amount {
+  font-size: 24px;
+  color: #333;
+}
+
+/* Budget Buttons Styles */
+.budget-buttons {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.new-budget-button {
+  margin: 12px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.new-budget-button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.2);
+}
+
+.budget-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.budget-card {
+  background-color: #f8f9fa;
+  padding: 20px;
+  width: 250px;
+  border: solid 1px #e0e0e0;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.budget-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.budget-card a {
+  font-size: 22px;
+  color: #007bff;
+  font-weight: lighter;
+}

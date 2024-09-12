@@ -1,34 +1,44 @@
-<div class="page-container">
+<div class="home-page-container">
   <div class="budget-title">
     <h1>My Budgets</h1>
   </div>
 
-  <div class="budget-display">
-    <% show_budget = @budgets.last %>
-    <div class="name">
-      <%= link_to show_budget.name, budget_path(show_budget), class: "btn-success" %>
+  <% if !@budgets.empty? %>
+    <div class="budget-display">
+      <% show_budget = @budgets.last %>
+      <div class="name">
+        <%= link_to show_budget.name, budget_path(show_budget), class: "btn-success" %>
+      </div>
+
+      <div class="subcontent">
+        <div class="type">
+          <%= show_budget.budget_type %>
+        </div>
+
+        <div class="amount">
+          <%= "R#{show_budget.expenses.sum(:amount)}0" %>
+        </div>
+      </div>
     </div>
 
-    <div class="subcontent">
-      <div class="type">
-        <%= show_budget.budget_type %>
-      </div>
-
-      <div class="amount">
-        <%= "R#{show_budget.total_amount}0" %>
-      </div>
+    <div class="budget-buttons">
+      <%= link_to "New Budget Plan", new_budget_path, class: "new-budget-button" %>
     </div>
-  </div>
 
-  <div class="budget-buttons">
-    <%= link_to "New Budget Plan", new_budget_path, class: "new-budget-button" %>
-  </div>
+    <div class="budget-container">
+      <% @budgets.reverse.each do |budget| %>
+        <div class="budget-card">
+          <%= link_to budget.name, budget_path(budget), class: "btn-success" %>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="budget-buttons">
+      <%= link_to "New Budget Plan", new_budget_path, class: "new-budget-button" %>
+    </div>
 
-  <div class="budget-container">
-    <% @budgets.reverse.each do |budget| %>
-      <div class="budget-card">
-        <%= link_to budget.name, budget_path(budget), class: "btn-success" %>
-      </div>
-    <% end %>
-  </div>
+    <div class="budget-display">
+      <p>No Budgets Yet.</p>
+    </div>
+  <% end %>
 </div>

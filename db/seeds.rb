@@ -8,7 +8,6 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 # db/seeds.rb
-
 require 'faker'
 
 # Clear existing data
@@ -51,8 +50,7 @@ users.each do |user|
       name: Faker::App.name,
       budget_type: ['Monthly', 'Yearly', 'Weekly'].sample,
       total_amount: Faker::Number.between(from: 500, to: 5000),
-      start_date: Faker::Date.backward(days: 60),
-      end_date: Faker::Date.forward(days: 60)
+      due_date: Faker::Date.forward(days: 30)
     )
 
     # Create Expenses for each Budget
@@ -64,8 +62,7 @@ users.each do |user|
         name: Faker::Commerce.product_name,
         amount: Faker::Commerce.price(range: 10.0..500.0),
         category_id: expense_categories.sample.id,
-        recurrence: ['One-time', 'Weekly', 'Monthly'].sample,
-        due_date: Faker::Date.forward(days: 30)
+        recurrence: ['One-time', 'Weekly', 'Monthly'].sample
       )
     end
   end
