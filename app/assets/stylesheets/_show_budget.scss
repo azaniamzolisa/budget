@@ -1,6 +1,6 @@
 .budget-page-container {
   max-width: 800px;
-  margin: 40px 10px;
+  margin: 16px 8px;
   padding: 20px;
   background-color: #fff;
   border-radius: 15px;
@@ -8,13 +8,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 80vh;
+  min-height: 80vh;
 }
 
 .budget-page-title {
   font-size: 32px;
   color: #333;
-  margin-bottom: 10px;
+  margin: 0;
   text-align: center;
 }
 
@@ -22,17 +22,17 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+
+  h2 {
+    margin: 0;
+    font-size: 16px;
+  }
 }
 
 .total-amount {
   text-align: center;
   font-size: 24px;
   color: #333;
-}
-
-.total-amount h2 {
-  margin-bottom: 10px;
-  font-size: 20px;
 }
 
 /* Add Expense Button Styles */
@@ -59,7 +59,7 @@
 .expense-container {
   width: 100%;
   display: grid;
-  gap: 20px;
+  gap: 8px;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 

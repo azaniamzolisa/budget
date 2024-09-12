@@ -1,6 +1,5 @@
 <div class="budget-page-container">
-  <h1 class="budget-page-title"><%= @budget.name %></h1>
-  <hr class="divider">
+  <h1 class="budget-page-title"><%= link_to @budget.name, root_path %></h1>
 
   <div class="total-amount">
     <div class="total-cost">
@@ -15,8 +14,6 @@
     <%= link_to 'Add an Expense', new_budget_expense_path(@budget), class: "regular-button add-expense-btn" %>
   </div>
 
-<!--  <hr class="divider">
--->
   <div class="expense-container">
     <% @budget.expenses.each do |expense| %>
       <div class="expense-card">

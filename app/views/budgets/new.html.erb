@@ -1,5 +1,5 @@
-<div class="page-container">
-  <h1 class="page-title">New Budget</h1>
+<div class="new-page-container">
+  <h1 class="new-page-title">New Budget</h1>
   <%= simple_form_for(@budget, html: { class: 'budget-form' }) do |form| %>
     <div class="form-group">
       <%= form.input :name, input_html: { class: 'form-input' } %>
@@ -10,11 +10,7 @@
     </div>
 
     <div class="form-group">
-      <%= form.input :start_date, as: :string, input_html: { data: { controller: 'datepicker' }, class: 'form-input' } %>
-    </div>
-
-    <div class="form-group">
-      <%= form.input :end_date, as: :string, input_html: { data: { controller: 'datepicker' }, class: 'form-input' } %>
+      <%= form.input :due_date, as: :string, input_html: { data: { controller: 'datepicker' }, class: 'form-input' } %>
     </div>
 
     <div class="form-actions">
